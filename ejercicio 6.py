@@ -37,10 +37,11 @@ class HashTable:
             current_node.next = new_node
 
 def generate_stormtroopers():
+
     legions = ["FL", "TF", "TK", "CT", "FN", "FO"]
     stormtroopers = []
     for i in range(2000):
-        code = "".join([random.choice(string.digits) for _ in range(7)])
+        code = "".join([random.choice( str.digits) for _ in range(7)])
         legion = random.choice(legions)
         stormtrooper = Stormtrooper(code, legion)
         stormtroopers.append(stormtrooper)

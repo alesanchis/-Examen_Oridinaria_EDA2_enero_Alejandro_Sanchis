@@ -1,21 +1,20 @@
 import heapq
 import os
-
 class HuffmanCoding:
+
 	def _init_(self, path):
 		self.path = path
 		self.heap = []
 		self.codes = {}
 		self.reverse_mapping = {}
-
 	class HeapNode:
+
 		def _init_(self, char, freq):
 			self.char = char
 			self.freq = freq
 			self.left = None
 			self.right = None
-
-		# defining comparators less_than and equals
+		
 		def _lt_(self, other):
 			return self.freq < other.freq
 
@@ -25,9 +24,6 @@ class HuffmanCoding:
 			if(not isinstance(other, HeapNode)):
 				return False
 			return self.freq == other.freq
-
-	# functions for compression:
-
 	def make_frequency_dict(self, text):
 		frequency = {}
 		for character in text:
@@ -40,7 +36,6 @@ class HuffmanCoding:
 		for key in frequency:
 			node = self.HeapNode(key, frequency[key])
 			heapq.heappush(self.heap, node)
-
 	def merge_nodes(self):
 		while(len(self.heap)>1):
 			node1 = heapq.heappop(self.heap)
@@ -51,7 +46,6 @@ class HuffmanCoding:
 			merged.right = node2
 
 			heapq.heappush(self.heap, merged)
-
 
 	def make_codes_helper(self, root, current_code):
 		if(root == None):
@@ -126,9 +120,7 @@ class HuffmanCoding:
 		print("Compressed")
 		return output_path
 
-
-	""" functions for decompression: """
-
+        #descompresar
 
 	def remove_padding(self, padded_encoded_text):
 		padded_info = padded_encoded_text[:8]
