@@ -1,47 +1,51 @@
-#creacion:
+class Armadura:
+    def __init__(self, nombre, rango):
+        self.nombre = nombre
+        self.rango = rango
+        print("La armadura ha sido creada con éxito.")
 
-class Stormtrooper:
-  def __init__(self, nombre, rango):
-    self.nombre = nombre
-    self.rango = rango
-    print(f"Stormtrooper {nombre} creado con éxito")
+    def calificacion(self):
+        print("La armadura ha sido clasificada como " + self.rango)
+    
+    def __str__(self):
+        return self.nombre + " con clasificación " + self.rango
 
-  def calificacion(self):
-    legion = self.rango[:2]
-    cohorte = self.rango[2]
-    siglo = self.rango[3]
-    escuadra = self.rango[4]
-    trooper = self.rango[5:]
-    return f"{legion}-{cohorte}{siglo}{escuadra}{trooper}"
-  
-  def __str__(self):
-    return f"Stormtrooper {self.nombre} con rango {self.rango}"
+armaduras_list = []
+armaduras_list.append(Armadura("Iron Man", "MK-8-8-8-8"))
+armaduras_list.append(Armadura("Iron Man", "MK-9-8-7-6"))
+armaduras_list.append(Armadura("Iron Man", "MK-10-9-8-7"))
 
-stormtroopers = [
-    Stormtrooper("Finn", "TK-8654"),
-    Stormtrooper("Phasma", "FN-2187"),
-    Stormtrooper("Hux", "KN-1239"),
-]
+for armor in armaduras_list:
+    print(armor)
 
-for trooper in stormtroopers:
-  print(trooper)
+#experimentacion
 
-#experimentacion:
+class Armadura:
+    def __init__(self, nombre, rango):
+        self.nombre = nombre
+        self.rango = rango
+        print("La armadura ha sido creada con éxito.")
 
-class Stormtrooper:
-  def __init__(self, nombre, rango):
-    self.nombre = nombre
-    self.rango = rango
-    print(f"Stormtrooper {nombre} creado con éxito")
+    def __str__(self):
+        return "Nombre: " + self.nombre + ", Rango: " + self.rango
 
-  def __str__(self):
-    return f"Stormtrooper {self.nombre} con rango {self.rango}"
+armaduras_list = []
+armaduras_list.append(Armadura("Iron Man", "MK-8-8-8-8"))
+armaduras_list.append(Armadura("Iron Man", "MK-9-8-7-6"))
+armaduras_list.append(Armadura("Iron Man", "MK-10-9-8-7"))
 
-stormtroopers = [
-    Stormtrooper("Finn", "TK-8654"),
-    Stormtrooper("Phasma", "FN-2187"),
-    Stormtrooper("Hux", "KN-1239"),
-]
+for armor in armaduras_list:
+    print(armor)
 
-for trooper in stormtroopers:
-  print(trooper)
+armaduras_list = []
+armaduras_list.append(Armadura("Iron Man", "MK-8-8-8-8"))
+armaduras_list.append(Armadura("Iron Man", "MK-9-8-7-6"))
+armaduras_list.append(Armadura("Iron Man", "MK-10-9-8-7"))
+armaduras_list.append(Armadura("Iron Man", "MK-11-9-8-7"))
+armaduras_list.append(Armadura("Iron Man", "MK-12-9-8-7"))
+
+for armor in armaduras_list:
+    print(armor)
+
+for armor in armaduras_list:
+    print(armor.__str__())
